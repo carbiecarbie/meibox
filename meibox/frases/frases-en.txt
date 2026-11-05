@@ -1,0 +1,25 @@
+# Mei's default lines (English).
+# Format: type: text. Blanks: {jogo} {console} {dias} {hora} {temp} {horas} {jogo_top}
+# Your own go in /roms/totobox/frases-en.txt, same format.
+
+lembrete: Hey, are you finishing {jogo} today?
+lembrete: {jogo} won't beat itself, you know.
+lembrete: {jogo} is waiting for you on the {console}.
+saudade: {dias} days without playing? The {console} misses you.
+saudade: I thought you swapped me for your phone. {dias} days!
+madrugada: {hora} and still playing? Certified night owl.
+madrugada: It's {hora}. One more round and bed, ok?
+manha: Good morning! Coffee and a quick game?
+tarde: Good afternoon! Up for a classic?
+noite: Good evening! Game time before bed.
+calor: I'm at {temp}! Something light, maybe?
+ficha: You've spent {horas} hours on {jogo_top}. Respect.
+piada: Meibox: the only console powered by cat treats.
+piada: Today Mei picks, you just obey.
+piada: Meow. (Translation: just play already.)
+piada: You hold B, I'll hold A.
+piada: No saves were harmed in the making of this console.
+sorteio: Today is a {jogo} day!
+sorteio: Mei picked {jogo}. No complaints.
+sorteio: {jogo}! Trust Mei.
+erro: Hmm, {jogo} didn't start. I wrote the error to the log.

@@ -1,0 +1,13 @@
+{
+  "_leia": "Nenhuma IA vem escolhida. Veja no README como escolher o fornecedor e o modelo e pôr a chave.",
+  "dicas": {"fornecedor": "", "modelo": "", "esforco": "low"},
+  "ficha": {"fornecedor": "", "modelo": "", "esforco": "medium", "busca_web": true, "max_buscas": 5},
+  "fornecedores": {
+    "anthropic": {"chave": "~/.config/mei-copiloto/chaves/anthropic"},
+    "openai_compat": {"url": "https://api.openai.com/v1", "chave": "~/.config/mei-copiloto/chaves/openai"}
+  },
+  "limite_por_dia": 200, "fichas_por_dia": 10, "tempo_maximo_s": 15, "tempo_ficha_s": 90,
+  "salvar_dicas": true, "pasta_dicas": "/roms/totobox/dicas", "pasta_guias": "/roms/totobox/guias",
+  "idioma": "auto",
+  "carregar_sdk": "primeiro_uso"
+}

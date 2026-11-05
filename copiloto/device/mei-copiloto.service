@@ -1,0 +1,16 @@
+[Unit]
+Description=Copiloto da Mei (dicas de IA no RetroArch, 127.0.0.1:4404)
+After=network-online.target
+
+[Service]
+Type=simple
+User=ark
+ExecStart=/usr/bin/python3 -I /home/ark/.local/share/mei-copiloto/mei_copiloto.py
+Restart=on-failure
+RestartSec=5
+Nice=5
+StandardOutput=null
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

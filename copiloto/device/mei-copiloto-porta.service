@@ -1,0 +1,14 @@
+[Unit]
+Description=Copiloto da Mei: fecha a porta 55355 (comandos do RetroArch) para a rede
+Before=network-pre.target
+Wants=network-pre.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStartPre=-/usr/sbin/nft delete table inet mei_copiloto
+ExecStart=/usr/sbin/nft -f /etc/mei-copiloto-porta.nft
+ExecStop=/usr/sbin/nft delete table inet mei_copiloto
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+#!/usr/sbin/nft -f
+# Copiloto da Mei: os comandos de rede do RetroArch (UDP 55355) escutam em todas as interfaces.
+# Esta tabela própria descarta essa porta vinda de fora do próprio aparelho (só "lo" passa).
+# Não mexe em nenhuma outra regra. Desfazer: nft delete table inet mei_copiloto
+# (o serviço mei-copiloto-porta apaga a tabela antiga antes de carregar esta)
+table inet mei_copiloto {
+	chain entrada {
+		type filter hook input priority 0; policy accept;
+		iifname != "lo" udp dport 55355 drop
+	}
+}

@@ -1,0 +1,25 @@
+# Frases padrão da Mei (português).
+# Formato: tipo: texto. Buracos: {jogo} {console} {dias} {hora} {temp} {horas} {jogo_top}
+# Para as suas, crie /roms/totobox/frases-pt.txt no mesmo formato.
+
+lembrete: E aí, vai continuar o {jogo} hoje?
+lembrete: Ei, o {jogo} não vai se zerar sozinho.
+lembrete: O {jogo} tá te esperando no {console}.
+saudade: {dias} dias sem jogar? O {console} tá com saudade.
+saudade: Achei que você tinha me trocado pelo celular. {dias} dias, hein.
+madrugada: {hora} e jogando? Coruja oficial.
+madrugada: São {hora}. Vai dormir porra
+manha: Bom dia! Café e um joguinho?
+tarde: Boa tarde! Bora de um clássico?
+noite: Boa noite! Hora do joguinho antes de dormir.
+calor: Tô a {temp}! Vamos de algo levinho?
+ficha: Você já passou {horas} horas no {jogo_top}. Respeito.
+piada: Meibox: o único console que aceita Pix de sachê.
+piada: Hoje a Mei escolhe, você só obedece.
+piada: Miau. (Tradução: joga logo.)
+piada: Segura o B que eu seguro o A.
+piada: Nenhum save foi ferido na criação deste console.
+sorteio: Hoje é dia de {jogo}!
+sorteio: A Mei escolheu: {jogo}. Sem choro.
+sorteio: {jogo}! Confia na Mei.
+erro: Hmm, o {jogo} não abriu. Anotei o erro no registro.

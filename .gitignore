@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Keys and personal config: never commit these
+api_key
+chaves/
+*.key
+.env
+config-dev*.json
+config-*.local.json
+
+# Runtime data written on the device
+state/
+data/
+cache/
+vendor/
+*.log
+
+# Hints, game guides and test images generated while using it
+dicas/
+guias/
+teste/
+fichas/
