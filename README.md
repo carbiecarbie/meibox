@@ -1,6 +1,6 @@
 # Meibox
 
-*[Read in English](README.md)*
+*[Read in English](README.en.md)*
 
 Uma tela inicial aconchegante e uma ajudante de IA dentro do jogo para o portátil **R36S** (e clones com ArkOS / dArkOS). A estrela é a **Mei**, uma gata preta e branca de verdade.
 

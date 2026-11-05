@@ -1,6 +1,6 @@
 # Meibox
 
-*[Leia em português](README.pt-BR.md)*
+*[Leia em português](README.md)*
 
 A cozy home screen and an in-game AI helper for the **R36S** handheld (and clones running ArkOS / dArkOS), starring **Mei**, a real black-and-white cat.
 
