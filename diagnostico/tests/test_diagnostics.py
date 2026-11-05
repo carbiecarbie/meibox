@@ -57,7 +57,7 @@ class DiagnosticsTests(unittest.TestCase):
             (root / 'sys/class/net/wlan0/wireless').mkdir()
             def runner(args):
                 if args[:4] == ['ip', '-j', '-4', 'address']:
-                    return json.dumps([{'ifname': 'wlan0', 'addr_info': [{'scope': 'global', 'local': '192.168.15.13'}]}])
+                    return json.dumps([{'ifname': 'wlan0', 'addr_info': [{'scope': 'global', 'local': '192.168.0.50'}]}])
                 if 'GENERAL.STATE' in args:
                     return '30 (disconnected)'
                 return None
