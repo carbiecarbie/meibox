@@ -12,6 +12,8 @@ The repository has two parts that work on their own or together:
 | [`copiloto/`](copiloto/) | **Copiloto da Mei**, an in-game hint helper. Press **SELECT + R1** in any RetroArch game: the game pauses and Mei's speech balloon tells you what to do right now, based on a screenshot. Press it again to keep playing. |
 
 <p>
+  <img src="docs/screenshots/meibox-inicio.png" width="320" alt="Meibox welcome screen">
+  <img src="docs/screenshots/meibox-biblioteca.png" width="320" alt="Library">
   <img src="docs/screenshots/copiloto-megaman8.png" width="320" alt="Mei's hint over Mega Man 8">
   <img src="docs/screenshots/meibox-ajustes.png" width="320" alt="Meibox settings">
   <img src="docs/screenshots/meibox-nome.png" width="320" alt="Arcade-style name picker">

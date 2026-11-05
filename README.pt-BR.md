@@ -12,6 +12,8 @@ O repositório tem duas partes, que funcionam sozinhas ou juntas:
 | [`copiloto/`](copiloto/) | **Copiloto da Mei**, dicas dentro do jogo. Aperte **SELECT + R1** em qualquer jogo do RetroArch: o jogo pausa e o balão da Mei diz o que fazer agora, olhando a tela. Aperte de novo para voltar a jogar. |
 
 <p>
+  <img src="docs/screenshots/meibox-inicio.png" width="320" alt="Tela inicial do Meibox">
+  <img src="docs/screenshots/meibox-biblioteca.png" width="320" alt="Biblioteca">
   <img src="docs/screenshots/copiloto-megaman8.png" width="320" alt="Dica da Mei no Mega Man 8">
   <img src="docs/screenshots/meibox-ajustes.png" width="320" alt="Ajustes do Meibox">
   <img src="docs/screenshots/meibox-nome.png" width="320" alt="Escolha do nome estilo fliperama">
