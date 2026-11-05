@@ -26,12 +26,28 @@ The code, comments and Mei's lines are mostly in Brazilian Portuguese. The inter
 
 - An R36S (RK3326) or similar handheld with **dArkOS / ArkOS**. Tested on dArkOSRE (Debian 13, Python 3.13, RetroArch 1.22.2).
 - The SDL2, SDL2_image and SDL2_ttf libraries. They already ship with those systems.
-- For the copilot: Wi-Fi with internet, and an API key from an AI provider (see [Choosing the AI](#choosing-the-ai)).
-- SSH access to the device to install, for example with "Enable Remote Services".
+- For the copilot (optional): a USB Wi-Fi adapter (the R36S has no Wi-Fi), internet, and an API key from an AI provider (see [Choosing the AI](#choosing-the-ai)).
+- It does not work on ROCKNIX, AmberELEC or Knulli, which are built differently.
+
+## Install (the easy way)
+
+No Wi-Fi, terminal or cable needed: just the SD card.
+
+1. Download `Meibox-<version>.zip` from [Releases](https://github.com/carbiecarbie/meibox/releases) and unzip it.
+2. Switch the device off, take out the system SD card and put it in your computer. Open the **EASYROMS** drive (where the games are).
+3. Copy the `tools` and `totobox` folders from the ZIP into EASYROMS. If asked, merge/replace.
+4. *(Optional, for the copilot)* open `EASYROMS/totobox/chave-da-ia.txt`, paste your API key on the empty line and save.
+5. Put the card back, switch on and open **Options › Tools › Instalar Meibox**. Pick English and follow the screen: at the end it restarts and Meibox opens.
+
+The same item updates (copy the new version over the old one) and removes. The key leaves the card and is stored somewhere safe on the device. `READ-ME.txt` in the ZIP has the details.
+
+**Want an AI to do it?** If you use an assistant that works on your computer (Claude Code, Codex and the like), connect the device to Wi-Fi and ask it to read `PARA-SUA-IA.md` from the ZIP. It installs over the network, explains each step and never sees your key.
+
+The sections below cover installing by hand over SSH, if you prefer.
 
 ## Meibox
 
-### Install
+### Install over SSH (advanced)
 
 Copy the `meibox/` folder to the device, for example to `/tmp/meibox`, and run as your normal user (`ark`):
 
@@ -89,7 +105,7 @@ It draws Mei's balloon as a transparent PNG, and RetroArch shows it over the pau
 - **Limits:** 200 hints and 10 guides per day by default. A failed hint doesn't count.
 - **Language and name:** they follow Meibox's settings when Meibox is installed. Otherwise Portuguese, or set `"idioma": "en"` in the config.
 
-### Install
+### Install over SSH (advanced)
 
 Copy the `copiloto/` folder to the device, for example to `/tmp/copiloto`. First look at what it would change, then install:
 
@@ -112,7 +128,7 @@ What it changes:
 
 ### Choosing the AI
 
-**No AI provider is set up by default.** Until you choose one, the balloon says so. You need to:
+**No AI provider is set up by default.** With the [easy install](#install-the-easy-way), paste an OpenAI or Anthropic key into `totobox/chave-da-ia.txt` on the card and the installer does both steps below for you. By hand: Until you choose one, the balloon says so. You need to:
 1. put your key on the device, and
 2. pick the provider and model in the config.
 
@@ -188,6 +204,7 @@ cd meibox && python -m unittest discover -s tests
 | Folder | What it is |
 |---|---|
 | [`desempenho/`](desempenho/) | **Performance work** on an R36S with dArkOSRE for SNES, Mega Drive and GBA. Every change was measured on the device and can be undone with `device/undo-all.sh`. There are frame-rate benchmarks from savestates, cores rebuilt with `-O3`/PGO, and per-core and per-game RetroArch overrides. Of the 27 heaviest games measured, the ones below 60 fps went from 5 to 0. The report is in Portuguese: [`desempenho/results/RELATORIO-FINAL.md`](desempenho/results/RELATORIO-FINAL.md). Third-party core sources and the `/boot` backup are not included. |
+| [`instalador/`](instalador/) | The **SD-card installer** behind the release ZIP: the Options › Tools menu item, the key handling and `PARA-SUA-IA.md`. |
 | [`diagnostico/`](diagnostico/) | **R36S Diagnostics**, a small dialog-based tool opened from EmulationStation's Options menu. It shows network, USB, CPU, memory, battery and storage, and saves a JSON/TXT report. See [`diagnostico/README.txt`](diagnostico/README.txt) (in Portuguese). |
 
 ## Credits

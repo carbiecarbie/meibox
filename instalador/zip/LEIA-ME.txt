@@ -1,0 +1,43 @@
+MEIBOX - como instalar
+======================
+
+Uma tela de início para o R36S, com a gata Mei, os seus jogos e a sua Ficha.
+Funciona no R36S com dArkOS ou ArkOS. Não precisa de internet nem de computador
+ligado ao aparelho: só do cartão SD.
+
+INSTALAR
+1. Desligue o aparelho e tire o cartão SD do sistema.
+2. Ponha o cartão no computador. Abra a unidade chamada EASYROMS (é onde ficam os jogos).
+3. Copie as pastas "tools" e "totobox" deste ZIP para dentro do EASYROMS.
+   Se o computador perguntar se quer juntar ou substituir, diga que sim.
+4. Devolva o cartão e ligue o aparelho.
+5. No EmulationStation, abra Options > Tools > Instalar Meibox e siga a tela.
+   (A confirma, B volta, direcional escolhe.)
+6. No fim ele pergunta se pode reiniciar. Depois disso o Meibox abre ao ligar.
+
+Para pular o Meibox numa vez: segure B enquanto o aparelho liga.
+Para ir ao EmulationStation: aperte B na tela de início do Meibox.
+
+COPILOTO DA MEI (opcional)
+Dicas de uma IA durante o jogo: aperte SELECT + R1 e a Mei diz o que fazer.
+Precisa de um adaptador Wi-Fi USB (o R36S não tem Wi-Fi) e de uma chave de API
+da OpenAI ou da Anthropic (cada dica custa uma fração de centavo).
+Antes do passo 4, abra no computador o arquivo EASYROMS/totobox/chave-da-ia.txt,
+cole a sua chave na linha em branco e salve. O instalador guarda a chave num
+lugar protegido do aparelho e apaga ela do cartão.
+Já instalou sem a chave? Ponha a chave no arquivo e rode Instalar Meibox de novo.
+
+ATUALIZAR OU REMOVER
+Copie as pastas de uma versão nova por cima e rode Options > Tools > Instalar Meibox.
+O mesmo item tem a opção Remover. As suas fotos, frases, dicas e guias ficam na
+pasta totobox do cartão.
+
+QUER QUE UMA IA FAÇA TUDO?
+Se você usa um assistente de IA que mexe no computador (Claude Code, Codex e
+parecidos), conecte o aparelho no Wi-Fi e peça para ele ler o arquivo
+PARA-SUA-IA.md deste ZIP. Ele faz a instalação pela rede e explica cada passo.
+
+DEU PROBLEMA?
+O registro da última instalação fica em EASYROMS/totobox/instalador/ultimo-log.txt
+(sem a sua chave). Abra um "issue" em https://github.com/carbiecarbie/meibox
+com esse arquivo.

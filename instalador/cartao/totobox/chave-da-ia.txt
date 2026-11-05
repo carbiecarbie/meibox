@@ -1,0 +1,16 @@
+# COPILOTO DA MEI (opcional) - dicas de uma IA durante o jogo.
+# Precisa de um adaptador Wi-Fi no aparelho e de uma chave de API.
+#
+# 1. Cole a sua chave na linha em branco la embaixo e salve este arquivo.
+#    Serve chave da OpenAI (comeca com sk-) ou da Anthropic (comeca com sk-ant-).
+# 2. No aparelho, abra Options > Tools > Instalar Meibox.
+#
+# O instalador guarda a chave num lugar protegido do sistema e
+# apaga ela deste arquivo. Se nao quiser o copiloto, deixe como esta.
+#
+# MEI COPILOT (optional) - in-game hints from an AI.
+# Needs a USB Wi-Fi adapter and an API key. Paste an OpenAI (sk-...)
+# or Anthropic (sk-ant-...) key on the empty line below, save, and run
+# Options > Tools > Instalar Meibox. The key is moved somewhere safe
+# and erased from this file. No key = no copilot, that's fine.
+

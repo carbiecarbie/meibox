@@ -1,0 +1,41 @@
+MEIBOX - how to install
+=======================
+
+A home screen for the R36S, with Mei the cat, your games and your play stats.
+Works on the R36S with dArkOS or ArkOS. No internet or cable needed: just the SD card.
+
+INSTALL
+1. Switch the device off and take out the system SD card.
+2. Put the card in your computer and open the drive called EASYROMS (where the games are).
+3. Copy the "tools" and "totobox" folders from this ZIP into EASYROMS.
+   If the computer asks to merge or replace, say yes.
+4. Put the card back and switch the device on.
+5. In EmulationStation, open Options > Tools > Instalar Meibox and follow the screen.
+   Pick "English" on the first screen. (A confirms, B goes back, D-pad moves.)
+6. At the end it offers to restart. From then on, Meibox opens at boot.
+
+To skip Meibox once: hold B while the device starts.
+To go to EmulationStation: press B on the Meibox welcome screen.
+
+MEI COPILOT (optional)
+In-game hints from an AI: press SELECT + R1 and Mei tells you what to do.
+Needs a USB Wi-Fi adapter (the R36S has no Wi-Fi) and an OpenAI or Anthropic API key
+(each hint costs a fraction of a cent).
+Before step 4, open EASYROMS/totobox/chave-da-ia.txt on the computer, paste your key
+on the empty line and save. The installer moves the key somewhere safe on the device
+and erases it from the card.
+Installed without a key? Put it in the file and run Instalar Meibox again.
+
+UPDATE OR REMOVE
+Copy a newer version's folders over the old ones and run Options > Tools > Instalar Meibox.
+The same item has a Remove option. Your pictures, lines, hints and guides stay in the
+totobox folder on the card.
+
+WANT AN AI TO DO IT?
+If you use an AI assistant that works on your computer (Claude Code, Codex and the like),
+connect the device to Wi-Fi and ask it to read PARA-SUA-IA.md from this ZIP. It installs
+over the network and explains each step.
+
+PROBLEMS?
+The last install log is EASYROMS/totobox/instalador/ultimo-log.txt (it never contains
+your key). Open an issue at https://github.com/carbiecarbie/meibox with that file.
