@@ -1,0 +1,152 @@
+[
+ {
+  "emu": "retroarch",
+  "core": "snes9x",
+  "rom": "/roms/snes/Star Fox (USA) (Rev 2).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 1,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "mednafen_supafaust",
+  "rom": "/roms/snes/Star Fox (USA) (Rev 2).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 1,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "snes9x2010",
+  "rom": "/roms/snes/Star Fox (USA) (Rev 2).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 1,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "chimerasnes",
+  "rom": "/roms/snes/Star Fox (USA) (Rev 2).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 1,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "snes9x",
+  "rom": "/roms/snes/Stunt Race FX (USA) (Rev 1).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 1,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "chimerasnes",
+  "rom": "/roms/snes/Stunt Race FX (USA) (Rev 1).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 1,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "snes9x2010",
+  "rom": "/roms/snes/Stunt Race FX (USA) (Rev 1).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 1,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Doom II (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 1,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "gpsp",
+  "rom": "/roms/gba/Doom II (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 1,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Duke Nukem Advance (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 1,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "gpsp",
+  "rom": "/roms/gba/Duke Nukem Advance (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 1,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/F-Zero - GP Legend (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 1,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "gpsp",
+  "rom": "/roms/gba/F-Zero - GP Legend (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 1,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Need for Speed Carbon - Own the City (USA, Europe) (En,Fr,De,Es,It).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 1,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "gpsp",
+  "rom": "/roms/gba/Need for Speed Carbon - Own the City (USA, Europe) (En,Fr,De,Es,It).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 1,
+  "ss": true
+ }
+]

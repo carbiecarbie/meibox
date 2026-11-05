@@ -1,0 +1,106 @@
+[
+ {
+  "emu": "retroarch",
+  "core": "snes9x",
+  "rom": "/roms/snes/Super Mario World 2 - Yoshi's Island (USA) (Rev 1).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/nothread.cfg"
+  }
+ },
+ {
+  "emu": "retroarch",
+  "core": "snes9x",
+  "rom": "/roms/snes/Donkey Kong Country (USA) (Rev 2).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/nothread.cfg"
+  }
+ },
+ {
+  "emu": "retroarch",
+  "core": "genesis_plus_gx",
+  "rom": "/roms/megadrive/Virtua Racing.zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/nothread.cfg"
+  }
+ },
+ {
+  "emu": "retroarch",
+  "core": "genesis_plus_gx",
+  "rom": "/roms/megadrive/Sonic & Knuckles and Sonic III.zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/nothread.cfg"
+  }
+ },
+ {
+  "emu": "retroarch",
+  "core": "genesis_plus_gx",
+  "rom": "/roms/megadrive/Gunstar Heroes.zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/nothread.cfg"
+  }
+ },
+ {
+  "emu": "retroarch",
+  "core": "genesis_plus_gx",
+  "rom": "/roms/megadrive/Vectorman I.zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/nothread.cfg"
+  }
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Golden Sun (USA, Europe).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/nothread.cfg"
+  }
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Legend of Zelda, The - The Minish Cap (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/nothread.cfg"
+  }
+ }
+]

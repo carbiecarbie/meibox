@@ -1,0 +1,5 @@
+{
+ "/roms/gba/Doom II (USA).zip": "3.0:START 6.5:A 10.0:A 13.5:START 17.0:A 20.5:A 24.0:START 27.5:A 33:A 36:A 46:SAVE 47.5:SHOT 49.5:QUIT",
+ "/roms/gba/F-Zero - GP Legend (USA).zip": "3.0:START 6.5:A 10.0:A 13.5:START 17.0:A 20.5:A 24.0:START 27.5:A 31.0:A 34.5:A 38.0:A 41.5:A 45.0:A 58:SAVE 59.5:SHOT 61.5:QUIT",
+ "/roms/gba/Legend of Zelda, The - The Minish Cap (USA).zip": "20:SAVE 21.5:SHOT 23.5:QUIT"
+}

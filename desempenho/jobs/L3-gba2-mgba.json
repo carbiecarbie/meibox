@@ -1,0 +1,72 @@
+[
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Ice Nine (USA, Europe) (En,Fr,De,Es,It).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Super Monkey Ball Jr. (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Doom (USA, Europe).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Need for Speed - Underground (USA, Europe) (En,Fr,De,It).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Need for Speed - Most Wanted (USA, Europe) (En,Fr,De,It).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/SSX Tricky (USA, Europe) (En,Fr,De).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Street Racing Syndicate (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ }
+]

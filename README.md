@@ -4,7 +4,7 @@
 
 A cozy home screen and an in-game AI helper for the **R36S** handheld (and clones running ArkOS / dArkOS), starring **Mei**, a real black-and-white cat.
 
-The repository has two parts that work on their own or together:
+The main parts are two programs that work on their own or together (plus the performance work and a diagnostics tool, [below](#more-in-this-repository)):
 
 | Folder | What it is |
 |---|---|
@@ -182,6 +182,13 @@ cd meibox && python -m unittest discover -s tests
 ```
 
 `copiloto/scripts/deploy.py` copies the copilot to `/tmp` on a device: `R36S_HOST=ark@<ip> python scripts/deploy.py`.
+
+## More in this repository
+
+| Folder | What it is |
+|---|---|
+| [`desempenho/`](desempenho/) | **Performance work** on an R36S with dArkOSRE for SNES, Mega Drive and GBA. Every change was measured on the device and can be undone with `device/undo-all.sh`. There are frame-rate benchmarks from savestates, cores rebuilt with `-O3`/PGO, and per-core and per-game RetroArch overrides. Of the 27 heaviest games measured, the ones below 60 fps went from 5 to 0. The report is in Portuguese: [`desempenho/results/RELATORIO-FINAL.md`](desempenho/results/RELATORIO-FINAL.md). Third-party core sources and the `/boot` backup are not included. |
+| [`diagnostico/`](diagnostico/) | **R36S Diagnostics**, a small dialog-based tool opened from EmulationStation's Options menu. It shows network, USB, CPU, memory, battery and storage, and saves a JSON/TXT report. See [`diagnostico/README.txt`](diagnostico/README.txt) (in Portuguese). |
 
 ## Credits
 

@@ -1,0 +1,158 @@
+[
+ {
+  "emu": "retroarch",
+  "core": "snes9x",
+  "rom": "/roms/snes/Star Fox (USA) (Rev 2).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/nothread.cfg"
+  }
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Duke Nukem Advance (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/nothread.cfg"
+  }
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Need for Speed Carbon - Own the City (USA, Europe) (En,Fr,De,Es,It).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/nothread.cfg"
+  }
+ },
+ {
+  "emu": "retroarch",
+  "core": "snes9x",
+  "rom": "/roms/snes/Star Fox (USA) (Rev 2).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/resq2.cfg"
+  }
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Duke Nukem Advance (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/resq2.cfg"
+  }
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Need for Speed Carbon - Own the City (USA, Europe) (En,Fr,De,Es,It).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/resq2.cfg"
+  }
+ },
+ {
+  "emu": "retroarch",
+  "core": "snes9x",
+  "rom": "/roms/snes/Star Fox (USA) (Rev 2).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/rescc.cfg"
+  }
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Duke Nukem Advance (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/rescc.cfg"
+  }
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Need for Speed Carbon - Own the City (USA, Europe) (En,Fr,De,Es,It).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/rescc.cfg"
+  }
+ },
+ {
+  "emu": "retroarch",
+  "core": "snes9x",
+  "rom": "/roms/snes/Star Fox (USA) (Rev 2).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/noaudio.cfg"
+  }
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Duke Nukem Advance (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/noaudio.cfg"
+  }
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Need for Speed Carbon - Own the City (USA, Europe) (En,Fr,De,Es,It).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false,
+  "env": {
+   "EXTRA_CFG": "/home/ark/.local/share/r36s-perf/bench/cfg/noaudio.cfg"
+  }
+ }
+]

@@ -1,0 +1,8 @@
+{
+ "/roms/gba/Doom II (USA).zip": "3.0:START 6.5:A 10.0:A 13.5:START 17.0:A 20.5:A 24.0:START 27.5:A 33:A 36:A 46:SAVE 47.5:SHOT 49.5:QUIT",
+ "/roms/gba/Duke Nukem Advance (USA).zip": "3.0:START 6.5:A 10.0:A 13.5:START 17.0:A 20.5:A 24.0:START 27.5:A 31.0:A 34.5:A 38.0:A 41.5:A 45.0:A 48.5:A 52.0:A 55.5:A 59.0:A 62.5:A 66.0:A 69.5:A 73.0:A 76.5:A 80.0:A 83.5:A 87.0:A 90.5:A 94.0:A 97.5:A 108:SAVE 109.5:SHOT 111.5:QUIT",
+ "/roms/gba/Golden Sun (USA, Europe).zip": "3.0:START 6.5:A 10.0:A 13.5:START 17.0:A 20.5:A 24.0:START 27.5:A 31.0:A 34.5:A 38.0:A 41.5:A 45.0:A 48.5:A 52.0:A 55.5:A 59.0:A 66:SAVE 67.5:SHOT 69.5:QUIT",
+ "/roms/gba/Need for Speed Carbon - Own the City (USA, Europe) (En,Fr,De,Es,It).zip": "3.0:START 6.5:A 10.0:A 13.5:START 17.0:A 20.5:A 24.0:START 27.5:A 31.0:A 34.5:START 38.0:A 41.5:A 45.0:START 48.5:A 52.0:A 55.5:START 59.0:A 62.5:A 66.0:A 69.5:A 73.0:A 80:SAVE 81.5:SHOT 83.5:QUIT",
+ "/roms/gba/F-Zero - GP Legend (USA).zip": "88:SAVE 89.5:SHOT 91.5:QUIT",
+ "/roms/gba/Legend of Zelda, The - The Minish Cap (USA).zip": "20:SAVE 21.5:SHOT 23.5:QUIT"
+}

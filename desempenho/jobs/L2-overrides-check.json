@@ -1,0 +1,112 @@
+[
+ {
+  "emu": "retroarch",
+  "core": "snes9x",
+  "rom": "/roms/snes/Donkey Kong Country (USA) (Rev 2).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 2,
+  "ss": false,
+  "esperado": "sem"
+ },
+ {
+  "emu": "retroarch",
+  "core": "snes9x",
+  "rom": "/roms/snes/Kirby Super Star (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 2,
+  "ss": false,
+  "esperado": "com"
+ },
+ {
+  "emu": "retroarch",
+  "core": "genesis_plus_gx",
+  "rom": "/roms/megadrive/Virtua Racing.zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 2,
+  "ss": false,
+  "esperado": "sem"
+ },
+ {
+  "emu": "retroarch",
+  "core": "genesis_plus_gx",
+  "rom": "/roms/megadrive/Sonic & Knuckles and Sonic III.zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 2,
+  "ss": false,
+  "esperado": "sem"
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Golden Sun (USA, Europe).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 2,
+  "ss": false,
+  "esperado": "sem"
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Legend of Zelda, The - The Minish Cap (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 2,
+  "ss": false,
+  "esperado": "sem"
+ },
+ {
+  "emu": "retroarch",
+  "core": "mgba_rumble",
+  "rom": "/roms/gba/Need for Speed Carbon - Own the City (USA, Europe) (En,Fr,De,Es,It).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 2,
+  "ss": false,
+  "esperado": "com"
+ },
+ {
+  "emu": "retroarch",
+  "core": "gpsp",
+  "rom": "/roms/gba/Duke Nukem Advance (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 2,
+  "ss": false,
+  "esperado": "sem"
+ },
+ {
+  "emu": "retroarch",
+  "core": "gpsp",
+  "rom": "/roms/gba/Doom II (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 2,
+  "ss": false,
+  "esperado": "sem"
+ },
+ {
+  "emu": "retroarch",
+  "core": "gpsp",
+  "rom": "/roms/gba/Super Monkey Ball Jr. (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 2,
+  "ss": false,
+  "esperado": "sem"
+ }
+]

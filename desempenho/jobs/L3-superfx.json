@@ -1,0 +1,142 @@
+[
+ {
+  "emu": "retroarch",
+  "core": "snes9x",
+  "rom": "/roms/snes/Doom (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "mednafen_supafaust",
+  "rom": "/roms/snes/Doom (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "chimerasnes",
+  "rom": "/roms/snes/Doom (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "snes9x2010",
+  "rom": "/roms/snes/Doom (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "snes9x",
+  "rom": "/roms/snes/Dirt Trax FX (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "mednafen_supafaust",
+  "rom": "/roms/snes/Dirt Trax FX (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "snes9x2010",
+  "rom": "/roms/snes/Dirt Trax FX (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "snes9x",
+  "rom": "/roms/snes/Vortex (USA) (En,Es).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "mednafen_supafaust",
+  "rom": "/roms/snes/Vortex (USA) (En,Es).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "chimerasnes",
+  "rom": "/roms/snes/Vortex (USA) (En,Es).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "snes9x2010",
+  "rom": "/roms/snes/Vortex (USA) (En,Es).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "mednafen_supafaust",
+  "rom": "/roms/snes/Dirt Racer (Europe) (En,Fr,De).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "chimerasnes",
+  "rom": "/roms/snes/Dirt Racer (Europe) (En,Fr,De).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "snes9x2010",
+  "rom": "/roms/snes/Dirt Racer (Europe) (En,Fr,De).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ }
+]

@@ -1,0 +1,122 @@
+[
+ {
+  "emu": "retroarch",
+  "core": "gpsp",
+  "rom": "/roms/gba/Doom II (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false
+ },
+ {
+  "emu": "retroarch",
+  "core": "/home/ark/.local/share/r36s-perf/cores/gpsp-o2_libretro.so",
+  "rom": "/roms/gba/Doom II (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "/home/ark/.local/share/r36s-perf/cores/gpsp-o3_libretro.so",
+  "rom": "/roms/gba/Doom II (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "gpsp",
+  "rom": "/roms/gba/Duke Nukem Advance (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false
+ },
+ {
+  "emu": "retroarch",
+  "core": "/home/ark/.local/share/r36s-perf/cores/gpsp-o2_libretro.so",
+  "rom": "/roms/gba/Duke Nukem Advance (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "/home/ark/.local/share/r36s-perf/cores/gpsp-o3_libretro.so",
+  "rom": "/roms/gba/Duke Nukem Advance (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "gpsp",
+  "rom": "/roms/gba/F-Zero - GP Legend (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false
+ },
+ {
+  "emu": "retroarch",
+  "core": "/home/ark/.local/share/r36s-perf/cores/gpsp-o2_libretro.so",
+  "rom": "/roms/gba/F-Zero - GP Legend (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "/home/ark/.local/share/r36s-perf/cores/gpsp-o3_libretro.so",
+  "rom": "/roms/gba/F-Zero - GP Legend (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "gpsp",
+  "rom": "/roms/gba/Need for Speed Carbon - Own the City (USA, Europe) (En,Fr,De,Es,It).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false
+ },
+ {
+  "emu": "retroarch",
+  "core": "/home/ark/.local/share/r36s-perf/cores/gpsp-o2_libretro.so",
+  "rom": "/roms/gba/Need for Speed Carbon - Own the City (USA, Europe) (En,Fr,De,Es,It).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "/home/ark/.local/share/r36s-perf/cores/gpsp-o3_libretro.so",
+  "rom": "/roms/gba/Need for Speed Carbon - Own the City (USA, Europe) (En,Fr,De,Es,It).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ }
+]

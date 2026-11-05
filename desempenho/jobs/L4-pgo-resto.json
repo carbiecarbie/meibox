@@ -1,0 +1,92 @@
+[
+ {
+  "emu": "retroarch",
+  "core": "/home/ark/.local/share/r36s-perf/backup/cores/mgba_rumble_libretro.so",
+  "rom": "/roms/gba/Golden Sun (USA, Europe).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false
+ },
+ {
+  "emu": "retroarch",
+  "core": "/home/ark/.local/share/r36s-perf/cores/mgba-o3_libretro.so",
+  "rom": "/roms/gba/Golden Sun (USA, Europe).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false
+ },
+ {
+  "emu": "retroarch",
+  "core": "/home/ark/.local/share/r36s-perf/cores/mgba-pgouse_libretro.so",
+  "rom": "/roms/gba/Golden Sun (USA, Europe).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "/home/ark/.local/share/r36s-perf/backup/cores/mgba_rumble_libretro.so",
+  "rom": "/roms/gba/Need for Speed Carbon - Own the City (USA, Europe) (En,Fr,De,Es,It).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false
+ },
+ {
+  "emu": "retroarch",
+  "core": "/home/ark/.local/share/r36s-perf/cores/mgba-o3_libretro.so",
+  "rom": "/roms/gba/Need for Speed Carbon - Own the City (USA, Europe) (En,Fr,De,Es,It).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false
+ },
+ {
+  "emu": "retroarch",
+  "core": "/home/ark/.local/share/r36s-perf/cores/mgba-pgouse_libretro.so",
+  "rom": "/roms/gba/Need for Speed Carbon - Own the City (USA, Europe) (En,Fr,De,Es,It).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ },
+ {
+  "emu": "retroarch",
+  "core": "/home/ark/.local/share/r36s-perf/backup/cores/mgba_rumble_libretro.so",
+  "rom": "/roms/gba/F-Zero - GP Legend (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false
+ },
+ {
+  "emu": "retroarch",
+  "core": "/home/ark/.local/share/r36s-perf/cores/mgba-o3_libretro.so",
+  "rom": "/roms/gba/F-Zero - GP Legend (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": false
+ },
+ {
+  "emu": "retroarch",
+  "core": "/home/ark/.local/share/r36s-perf/cores/mgba-pgouse_libretro.so",
+  "rom": "/roms/gba/F-Zero - GP Legend (USA).zip",
+  "slot": "0",
+  "n1": 120,
+  "n2": 1920,
+  "reps": 3,
+  "ss": true
+ }
+]

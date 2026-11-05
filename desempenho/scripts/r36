@@ -1,0 +1,13 @@
+#!/bin/sh
+# SSH para o R36S com a chave do projeto e host key fixada.
+# Uso: scripts/r36 'comando'     |  scripts/r36 -put local remoto  |  scripts/r36 -get remoto local
+# Aparelho e chave vêm do ambiente: R36S_HOST=ark@<ip>, R36S_SSH_KEY e R36S_KNOWN_HOSTS (opcionais).
+HOST=${R36S_HOST:?defina R36S_HOST, ex.: R36S_HOST=ark@192.168.0.50}
+OPTS="-o BatchMode=yes -o ConnectTimeout=8 -o LogLevel=ERROR"
+[ -n "${R36S_SSH_KEY:-}" ] && OPTS="$OPTS -i $R36S_SSH_KEY -o IdentitiesOnly=yes"
+[ -n "${R36S_KNOWN_HOSTS:-}" ] && OPTS="$OPTS -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$R36S_KNOWN_HOSTS"
+case "$1" in
+  -put) shift; exec scp -q $OPTS -r "$1" "$HOST:$2" ;;
+  -get) shift; exec scp -q $OPTS -r "$HOST:$1" "$2" ;;
+  *) exec ssh $OPTS "$HOST" "$@" ;;
+esac
