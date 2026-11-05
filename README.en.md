@@ -24,74 +24,42 @@ The code, comments and Mei's lines are mostly in Brazilian Portuguese. The inter
 
 ## Requirements
 
-- An R36S (RK3326) or similar handheld with **dArkOS / ArkOS**. Tested on dArkOSRE (Debian 13, Python 3.13, RetroArch 1.22.2).
-- The SDL2, SDL2_image and SDL2_ttf libraries. They already ship with those systems.
-- For the copilot (optional): a USB Wi-Fi adapter (the R36S has no Wi-Fi), internet, and an API key from an AI provider (see [Choosing the AI](#choosing-the-ai)).
+- An R36S or similar handheld with **dArkOS** or **ArkOS**. Tested on dArkOSRE.
 - It does not work on ROCKNIX, AmberELEC or Knulli, which are built differently.
+- For the copilot, which is optional:
+  - a USB Wi-Fi adapter, because the R36S has no Wi-Fi;
+  - an OpenAI or Anthropic API key.
 
-## Install (the easy way)
+## Install
 
 No Wi-Fi, terminal or cable needed: just the SD card.
 
 1. Download `Meibox-<version>.zip` from [Releases](https://github.com/carbiecarbie/meibox/releases) and unzip it.
 2. Switch the device off, take out the system SD card and put it in your computer. Open the **EASYROMS** drive (where the games are).
-3. Copy the `tools` and `totobox` folders from the ZIP into EASYROMS. If asked, merge/replace.
-4. *(Optional, for the copilot)* open `EASYROMS/totobox/chave-da-ia.txt`, paste your API key on the empty line and save.
-5. Put the card back, switch on and open **Options › Tools › Instalar Meibox**. Pick English and follow the screen: at the end it restarts and Meibox opens.
+3. Copy the `tools` and `totobox` folders from the ZIP into EASYROMS. If the computer asks, merge or replace.
+4. *(Optional, for the copilot)* open `EASYROMS/totobox/chave-da-ia.txt`, paste your key on the empty line and save.
+5. Put the card back, switch on and open **Options › Tools › Instalar Meibox**. Pick English and follow the screen. At the end it restarts, and Meibox opens.
 
-The same item updates (copy the new version over the old one) and removes. The key leaves the card and is stored somewhere safe on the device. `READ-ME.txt` in the ZIP has the details.
+- **Update:** copy the new version's folders over the old ones and run the same item.
+- **Remove:** run the same item and choose Remove.
+- **Skip Meibox once:** hold **B** while the device starts.
 
 **Want an AI to do it?** If you use an assistant that works on your computer (Claude Code, Codex and the like), connect the device to Wi-Fi and ask it to read `PARA-SUA-IA.md` from the ZIP. It installs over the network, explains each step and never sees your key.
 
-The sections below cover installing by hand over SSH, if you prefer.
+Prefer the terminal, want a different AI, or working on the code? See the [manual install and advanced options](docs/manual-install.md).
 
-## Meibox
+## Using Meibox
 
-### Install over SSH (advanced)
-
-Copy the `meibox/` folder to the device, for example to `/tmp/meibox`, and run as your normal user (`ark`):
-
-```bash
-bash /tmp/meibox/device/install.sh --boot
-```
-
-What the install does:
-- installs the app to `~/.local/share/totobox` (the internal name is still *totobox*);
-- adds **Meibox** to EmulationStation's *Options* menu;
-- with `--boot`, also opens Meibox when the device is switched on. When you leave Meibox, EmulationStation starts as usual.
-
-Ways to skip Meibox at boot:
-- hold **B** while booting;
-- or create the file `/roms/totobox/nao-abrir-ao-ligar`.
-
-Optional: `meibox/assets/meibox/loading-meibox.jpg` can replace `/roms/launchimages/loading.jpg` as the game-loading picture.
-
-### Use
-
-- **Welcome screen:** left/right and A to pick a card, START for settings, SELECT for your stats, B to go back to EmulationStation.
+- **Welcome screen:** left/right and A pick a card, START opens settings, SELECT opens your stats, B goes back to EmulationStation.
 - **Settings › What Mei calls you:** pick up to 12 letters, arcade style. Up/down change the letter, left/right move, A saves and B erases. Mei and the copilot then use this name.
-- **Your own lines:** write them for Mei in `/roms/totobox/frases-pt.txt` (or `frases-en.txt`). The file explains the format.
-- **Stats image:** START on the stats screen saves a picture to post, to `/roms/totobox/fichas/`. To add a footer to it, such as your site, write it on the first line of `/roms/totobox/rodape-ficha.txt`.
+- **Your own lines:** write them for Mei in `totobox/frases-en.txt` (or `frases-pt.txt`) on the card. The file explains the format.
+- **Stats image:** START on the stats screen saves a picture to post, to `totobox/fichas/`. To add a footer to it, such as your site, write it on the first line of `totobox/rodape-ficha.txt`.
 
-### Uninstall
+## Mei Copilot
 
-```bash
-bash ~/.local/share/totobox/device/uninstall.sh
-```
+In a RetroArch game, press **SELECT + R1**. The game pauses, the screenshot goes to the AI you chose, and Mei answers in a balloon over the game.
 
-Your lines and saved pictures in `/roms/totobox` stay.
-
-## Copiloto da Mei (in-game hints)
-
-RetroArch has a built-in **AI Service**. When you press the shortcut, it pauses the game and sends the screenshot to a URL. The copilot is a small Python service on `127.0.0.1:4404`. It sends the following to the AI provider you configured:
-- the screenshot;
-- the console and game name;
-- the game guide, if one exists;
-- the last few hints.
-
-It draws Mei's balloon as a transparent PNG, and RetroArch shows it over the paused game.
-
-- **Game guide:** the first time you ask for help in a game, Mei **researches that game on the web** (about 1 minute; RetroArch shows "Mei está estudando…"). She writes a plain-text guide to `/roms/totobox/guias/<Console>/<Game>.txt` with:
+- **Game guide:** the first time you ask for help in a game, Mei **researches that game on the web**. This takes about 1 minute, and the screen shows "Mei está estudando…". She writes a guide to `totobox/guias/<Console>/<Game>.txt` with:
   - controls for that version;
   - levels;
   - the 5 places where players get stuck most;
@@ -99,105 +67,56 @@ It draws Mei's balloon as a transparent PNG, and RetroArch shows it over the pau
   - missable items;
   - secrets.
 
-  Every later hint uses it. You can read and edit it from a PC; delete it to have it redone.
+  Every later hint uses it. You can read and edit it from a PC, or delete it to have it redone.
 - **Journal:** a short log per game, so Mei doesn't repeat herself.
-- **Saved hints:** each hint is also saved as an image (game screen + balloon) in `/roms/totobox/dicas/`, ready to post.
-- **Limits:** 200 hints and 10 guides per day by default. A failed hint doesn't count.
-- **Language and name:** they follow Meibox's settings when Meibox is installed. Otherwise Portuguese, or set `"idioma": "en"` in the config.
-
-### Install over SSH (advanced)
-
-Copy the `copiloto/` folder to the device, for example to `/tmp/copiloto`. First look at what it would change, then install:
-
-```bash
-bash /tmp/copiloto/device/install.sh --conferir
-```
-
-```bash
-bash /tmp/copiloto/device/install.sh
-```
-
-What it changes:
-1. It installs the app to `~/.local/share/mei-copiloto` and the config to `~/.config/mei-copiloto/config.json`. An existing config is never overwritten.
-2. It creates `/roms/totobox/dicas` and `/roms/totobox/guias`.
-3. It adds an **nft rule** (service `mei-copiloto-porta`) that closes UDP port 55355 to the network. RetroArch's network commands, which show the "studying" notice, would otherwise listen on every interface. Skip this with `--sem-porta`.
-4. It adds the **`mei-copiloto` service**, which starts at boot.
-5. In **both** RetroArch configs (`retroarch` and `retroarch32`), it saves a backup as `retroarch.cfg.antes-copiloto` and changes 6 lines: `ai_service_enable`, `ai_service_url`, `ai_service_mode`, `ai_service_pause`, `input_ai_service_btn = "5"` (R1) and `network_cmd_enable`. Skip this with `--sem-retroarch`. It refuses to run while a game is open, and it stops without writing anything if any hotkey or core override already uses R1.
-
-`--com-sdk` also installs the Anthropic Python SDK (about 47 MB). It is only needed for Claude.
-
-### Choosing the AI
-
-**No AI provider is set up by default.** With the [easy install](#install-the-easy-way), paste an OpenAI or Anthropic key into `totobox/chave-da-ia.txt` on the card and the installer does both steps below for you. By hand: Until you choose one, the balloon says so. You need to:
-1. put your key on the device, and
-2. pick the provider and model in the config.
-
-**1. The key.** Run this from your computer. It asks for the key without showing it, saves it with permission 600, and never writes it to the log:
-
-```bash
-ssh -t ark@<device-ip> 'umask 077; mkdir -p ~/.config/mei-copiloto/chaves && read -rsp Key: K && printf %s "$K" > ~/.config/mei-copiloto/chaves/openai && unset K && echo && echo saved'
-```
-
-Use `chaves/openai` for OpenAI or any OpenAI-compatible service, and `chaves/anthropic` for Claude.
-
-**2. The config.** Edit `~/.config/mei-copiloto/config.json` and fill in `dicas` (hints) and `ficha` (game guide):
-
-OpenAI. This is what the author uses: better hints in testing, and no extra SDK.
-```json
-"dicas": {"fornecedor": "openai_compat", "modelo": "gpt-6.1-terra", "esforco": "low"},
-"ficha": {"fornecedor": "openai_compat", "modelo": "gpt-6.1-terra", "esforco": "medium", "busca_web": true, "max_buscas": 5},
-```
-
-Claude. Install with `--com-sdk`.
-```json
-"dicas": {"fornecedor": "anthropic", "modelo": "claude-haiku-5-5", "esforco": "low"},
-"ficha": {"fornecedor": "anthropic", "modelo": "claude-sonnet-5-5", "esforco": "medium", "busca_web": true, "max_buscas": 5},
-```
-
-Other OpenAI-compatible services (OpenRouter, Gemini's compatible endpoint, a local Ollama or llama.cpp server):
-- set `fornecedores.openai_compat.url` and pick a model that accepts images;
-- web search only works on `api.openai.com`, so elsewhere the guide is written from the model's own knowledge and marked "written without research".
-
-Then restart the service:
-
-```bash
-sudo systemctl restart mei-copiloto
-```
+- **Saved hints:** each hint is also saved as an image (game screen + balloon) in `totobox/dicas/`, ready to post.
+- **Limits:** 200 hints and 10 guides per day. A failed hint doesn't count.
+- **Language and name:** they follow Meibox's settings.
+- **Which AI:** the installer tells from the key whether it is OpenAI or Anthropic and picks the model. On OpenAI it uses `gpt-6.1-terra`, which the author uses and which gave the best hints in testing. On Anthropic it uses Claude Haiku for hints and Sonnet for guides. To use OpenRouter, Gemini or an AI running at home, see the [advanced options](docs/manual-install.md#key-and-model-by-hand).
 
 ### Cost, speed and impact (measured on an R36S)
 
-- **Hint speed:** with `gpt-6.1-terra`, a hint takes about 2.5–4 s from button to balloon and costs about US$ 0.003. With Claude Haiku 5.5 it takes about 2 s and costs about US$ 0.0005.
-- **Guide cost:** a game guide with web search costs about US$ 0.06–0.08 with Terra, or US$ 0.2–0.3 with Claude Sonnet, **once per game**.
-- **Memory:** about 30 MB while idle. With the Anthropic SDK, about 90 MB after the first hint.
-- **Frame rate:** unchanged. Super Mario RPG ran at 76.6 vs 76.0 fps and Doom (SNES) at 79.1 vs 79.4, copilot off vs on, within measurement noise. The service does nothing while you play.
-- **Privacy:** only the screenshot, the game and console names, your chosen name and that game's guide and journal go to the provider. The service listens only on `127.0.0.1`.
+- **Hint speed and cost:**
+  - with `gpt-6.1-terra`, about 2.5–4 s from button to balloon and about US$ 0.003;
+  - with Claude Haiku 5.5, about 2 s and about US$ 0.0005.
+- **Guide cost**, **once per game**, with web search:
+  - about US$ 0.06–0.08 with Terra;
+  - US$ 0.2–0.3 with Claude Sonnet.
+- **Memory:** about 30 MB while idle. With Claude, about 90 MB after the first hint.
+- **Frame rate:** unchanged. The service does nothing while you play. With the copilot off and on:
+  - Super Mario RPG: 76.6 and 76.0 fps;
+  - Doom (SNES): 79.1 and 79.4 fps.
 
-### Uninstall
+  The differences are within measurement noise.
+- **Privacy:** only these go to the AI provider:
+  - the screenshot;
+  - the game and console names;
+  - your chosen name;
+  - that game's guide and journal.
 
-```bash
-bash ~/.local/share/mei-copiloto/device/uninstall.sh
-```
+  The key is stored on the device with restricted access, never on the card.
 
-What it does:
-- puts back only those 6 RetroArch lines, from the backup;
-- removes both services and the nft rule;
-- deletes the app.
+## What the install changes on the device
 
-It keeps your keys, your config, your hints and your guides.
+**Meibox:**
+- installs the app to `~/.local/share/totobox`;
+- adds an Options › Meibox entry;
+- if you want, opens Meibox at boot, before EmulationStation.
 
-### Development
+**Copilot:**
+- installs the app to `~/.local/share/mei-copiloto` and the config to `~/.config/mei-copiloto`;
+- adds the `mei-copiloto` service, which listens only inside the device (`127.0.0.1:4404`);
+- adds a network rule that closes UDP port 55355 to the outside;
+- in both RetroArch configs, saves a backup as `retroarch.cfg.antes-copiloto`, then changes 6 lines so SELECT + R1 calls Mei. If R1 is already in use, it leaves those configs alone.
 
-Tests run on a PC, with no SDL and no network:
+**Remove undoes all of that:**
+- puts back the 6 RetroArch lines;
+- removes the services and the network rule;
+- deletes the apps.
 
-```bash
-cd copiloto && python -m unittest discover -s tests
-```
-
-```bash
-cd meibox && python -m unittest discover -s tests
-```
-
-`copiloto/scripts/deploy.py` copies the copilot to `/tmp` on a device: `R36S_HOST=ark@<ip> python scripts/deploy.py`.
+What stays:
+- your stats pictures, lines, hints and game guides, in the card's `totobox` folder;
+- your key, unless you ask to erase it.
 
 ## More in this repository
 
