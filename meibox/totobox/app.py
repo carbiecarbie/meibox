@@ -14,6 +14,7 @@ from .phrases import Phrases
 from .screens.ficha import Ficha
 from .screens.home import Home
 from .screens.library import Library
+from .screens.mei_video import KonamiWatcher, MeiVideo
 from .screens.player_name_screen import PlayerNameScreen
 from .screens.roulette import Roulette
 from .screens.roulette_systems import RouletteSystems
@@ -64,6 +65,7 @@ class App:
         self.mascot = None
         self.stack = []
         self.modal = None
+        self.konami = KonamiWatcher()
         self.running = True
         self.script = list(script or [])
         self.shot_dir = shot_dir
@@ -173,6 +175,8 @@ class App:
                 dirty = True
             if wake and time.monotonic() >= wake:
                 dirty = True
+                if getattr(self.screen, "done", None) and self.screen.done():
+                    self._pop()
             if time.monotonic() - last_status >= STATUS_REFRESH_MS / 1000:
                 last_status = time.monotonic()
                 dirty = True
@@ -185,6 +189,8 @@ class App:
             while time.monotonic() < end:  # keep animating while waiting
                 wake = self.screen.next_wake()
                 if wake and wake <= time.monotonic():
+                    if getattr(self.screen, "done", None) and self.screen.done():
+                        self._pop()
                     self.draw()
                     self.gfx.present()
                 else:
@@ -233,6 +239,8 @@ class App:
             elif action == "b":
                 self.modal = None
             return
+        if self._easter_egg(action):
+            return
         self.sound(ACTION_SOUND.get(action, ""))
         result = self.screen.handle(action)
         if not result:
@@ -242,15 +250,36 @@ class App:
             self.modal = (t("modal.exit"), self.stop)
         elif kind == "pop":
             if len(self.stack) > 1:
-                self.stack.pop()
-                if hasattr(self.screen, "refresh"):
-                    self.screen.refresh()
+                self._pop()
             else:
                 self.modal = (t("modal.exit"), self.stop)
         elif kind == "push":
             self.stack.append(SCREENS[result[1]](self))
         elif kind == "launch":
             self.launch(result[1], result[2], **(result[3] if len(result) > 3 else {}))
+
+    def _pop(self):
+        old = self.stack.pop()
+        if hasattr(old, "close"):
+            old.close()
+        if hasattr(self.screen, "refresh"):
+            self.screen.refresh()
+
+    def _easter_egg(self, action):
+        """Up up down down left right left right, anywhere except where arrows type letters."""
+        if isinstance(self.screen, (MeiVideo, PlayerNameScreen)):
+            self.konami.feed("")
+            return False
+        if not self.konami.feed(action) or not os.path.exists(T.MEI_VIDEO):
+            return False
+        try:
+            video = MeiVideo(self)
+        except (OSError, ValueError) as e:
+            self.report["easter_egg_error"] = str(e)
+            return False
+        self.sound("meow")
+        self.stack.append(video)
+        return True
 
     def stop(self):
         self.running = False

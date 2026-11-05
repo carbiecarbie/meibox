@@ -27,3 +27,4 @@ FONT_TEXT = os.environ.get("TOTOBOX_FONT_TEXT", os.path.join(FONTS, "Nunito-Bold
 NAME = "MEIBOX"
 BACKGROUND = os.path.join(ASSETS, "meibox", "fundo-meibox.jpg")
 MASCOT = os.path.join(ASSETS, "meibox", "mascote-mei.png")  # Mei's face sticker, made in tools/meibox_studio.html
+MEI_VIDEO = os.path.join(ASSETS, "meibox", "mei-brincando.meiv")  # Konami easter egg, tools/make_mei_video.py
