@@ -1,0 +1,5 @@
+# Everything runs on Linux (the handheld): keep LF line endings even when cloned on Windows.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.ttf binary
