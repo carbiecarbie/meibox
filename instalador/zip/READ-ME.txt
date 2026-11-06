@@ -17,6 +17,14 @@ INSTALL
 To skip Meibox once: hold B while the device starts.
 To go to EmulationStation: press B on the Meibox welcome screen.
 
+FASTER GAMES (recommended)
+The installer asks whether to make games run faster. It swaps three emulators
+(snes9x, mGBA and gpSP) for versions rebuilt for the R36S and tunes video game by
+game. Measured on an R36S: SNES 24% faster on average, GBA 11% to 280%, and the
+button responds one frame sooner. Games are recognised by their content, not by
+file name. Remove puts everything back.
+Licenses and source code for these emulators: totobox/instalador/desempenho/licencas.
+
 MEI COPILOT (optional)
 In-game hints from an AI: press SELECT + R1 and Mei tells you what to do.
 Needs a USB Wi-Fi adapter (the R36S has no Wi-Fi) and an OpenAI or Anthropic API key
@@ -28,8 +36,8 @@ Installed without a key? Put it in the file and run Instalar Meibox again.
 
 UPDATE OR REMOVE
 Copy a newer version's folders over the old ones and run Options > Tools > Instalar Meibox.
-The same item has a Remove option. Your pictures, lines, hints and guides stay in the
-totobox folder on the card.
+The same item has a Remove option, which also restores the original emulators.
+Your pictures, lines, hints and guides stay in the totobox folder on the card.
 
 WANT AN AI TO DO IT?
 If you use an AI assistant that works on your computer (Claude Code, Codex and the like),

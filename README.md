@@ -4,7 +4,7 @@
 
 Uma tela inicial aconchegante e uma ajudante de IA dentro do jogo para o portátil **R36S** (e clones com ArkOS / dArkOS). A estrela é a **Mei**, uma gata preta e branca de verdade.
 
-As partes principais são dois programas, que funcionam sozinhos ou juntos (e mais a otimização de desempenho e uma ferramenta de diagnóstico, [abaixo](#mais-neste-repositório)):
+As partes principais são dois programas, que funcionam sozinhos ou juntos. O instalador também deixa os seus jogos **[mais rápidos](#jogos-mais-rápidos)**, e há uma ferramenta de diagnóstico [abaixo](#mais-neste-repositório).
 
 | Pasta | O que é |
 |---|---|
@@ -19,6 +19,22 @@ As partes principais são dois programas, que funcionam sozinhos ou juntos (e ma
   <img src="docs/screenshots/meibox-nome.png" width="320" alt="Escolha do nome estilo fliperama">
   <img src="docs/screenshots/meibox-ficha.png" width="320" alt="Ficha de jogo">
 </p>
+
+## Jogos mais rápidos
+
+O instalador pergunta se pode deixar os jogos mais rápidos (recomendado). Por trás disso há dois dias de medições num R36S: cada jogo foi medido a partir da mesma cena pesada, antes e depois de cada mudança, e cada mudança tem como ser desfeita.
+
+- **Nenhum jogo engasgando:** dos 27 jogos mais pesados medidos, os que não seguravam 60 fps caíram de **5 para 0**.
+- **SNES:** em média **24% mais rápido**. Star Fox foi de 63 para 96 fps, e Doom, de 58 para 79.
+- **GBA:** de 11% a 16% mais rápido em qualquer jogo, e de **55% a 280%** nos 3D pesados. F-Zero GP Legend foi de 70 para 268 fps.
+- **Botão mais rápido:** quase todos os jogos de SNES, GBA e Mega Drive respondem **um quadro antes** (~16 ms).
+
+Como isso foi feito:
+- **Emuladores recompilados:** snes9x, mGBA e gpSP foram compilados para o processador do R36S. No snes9x e no mGBA, a compilação foi guiada por um perfil gravado jogando no próprio aparelho.
+- **Vídeo jogo por jogo:** os jogos leves rodam sem o atraso extra de vídeo, e os pesados ganham folga.
+- **Emulador certo para cada jogo:** os que pedem usam outro emulador, como o Star Fox e os outros jogos com Super FX, o Doom e os 3D de GBA.
+
+O instalador reconhece os jogos pelo conteúdo da ROM, não pelo nome do arquivo, então funciona com a sua coleção, inclusive traduções. Se um emulador novo não abrir no seu sistema, o original fica. Remover volta tudo ao original. O método e todos os números estão no [relatório](desempenho/results/RELATORIO-FINAL.md).
 
 ## O que precisa
 
@@ -101,7 +117,13 @@ Num jogo do RetroArch, aperte **SELECT + R1**. O jogo pausa, a foto da tela vai 
 - cria uma regra de rede que fecha a porta UDP 55355 para fora do aparelho;
 - nas duas configs do RetroArch, troca 6 linhas para o SELECT + R1 chamar a Mei, depois de guardar um backup em `retroarch.cfg.antes-copiloto`. Se o R1 já estiver em uso, ele não mexe nessas configs.
 
+**Jogos mais rápidos** (se você aceitar):
+- troca snes9x, mGBA e gpSP pelas versões recompiladas e guarda os originais em `~/.local/share/meibox-desempenho/originais`;
+- cria ajustes do RetroArch por emulador e por jogo, marcados como do Meibox. Se já existir um ajuste seu, ele não é tocado;
+- nos jogos que pedem outro emulador, marca isso na lista de jogos do EmulationStation, com backup em `gamelist.xml.antes-meibox-desempenho`. Essa marcação é feita no próximo início, por um passo que roda antes do EmulationStation.
+
 **Remover desfaz tudo isso:**
+- volta os emuladores originais (se você não tiver trocado por outros), apaga os ajustes que ele criou e tira a marcação dos jogos;
 - volta as 6 linhas do RetroArch;
 - tira os serviços e a regra de rede;
 - apaga os apps.
@@ -114,7 +136,7 @@ O que fica:
 
 | Pasta | O que é |
 |---|---|
-| [`desempenho/`](desempenho/) | **Otimização de desempenho** de um R36S com dArkOSRE para SNES, Mega Drive e GBA. Cada mudança foi medida no aparelho e tem como ser desfeita com `device/undo-all.sh`. Tem testes de fps a partir de savestates, cores recompilados com `-O3`/PGO e ajustes do RetroArch por núcleo e por jogo. Dos 27 jogos mais pesados medidos, os que ficavam abaixo de 60 fps caíram de 5 para 0. O relatório está em [`desempenho/results/RELATORIO-FINAL.md`](desempenho/results/RELATORIO-FINAL.md). O código-fonte dos cores de terceiros e o backup do `/boot` não vêm junto. |
+| [`desempenho/`](desempenho/) | **Otimização de desempenho** de um R36S com dArkOSRE para SNES, Mega Drive e GBA. Cada mudança foi medida no aparelho e tem como ser desfeita com `device/undo-all.sh`. Tem testes de fps a partir de savestates, cores recompilados com `-O3`/PGO e ajustes do RetroArch por núcleo e por jogo. Dos 27 jogos mais pesados medidos, os que ficavam abaixo de 60 fps caíram de 5 para 0. O relatório está em [`desempenho/results/RELATORIO-FINAL.md`](desempenho/results/RELATORIO-FINAL.md). O instalador aplica a parte dos emuladores e dos ajustes por jogo. O código-fonte exato dos emuladores vai em cada [release](https://github.com/carbiecarbie/meibox/releases). |
 | [`instalador/`](instalador/) | O **instalador pelo cartão SD** que gera o ZIP da release: o item no menu Options › Tools, o cuidado com a chave e o `PARA-SUA-IA.md`. |
 | [`diagnostico/`](diagnostico/) | **R36S Diagnostics**, uma ferramenta pequena em menus de texto, aberta pelo menu Options do EmulationStation. Mostra rede, USB, CPU, memória, bateria e espaço, e salva um relatório JSON/TXT. Veja [`diagnostico/README.txt`](diagnostico/README.txt). |
 
@@ -127,3 +149,10 @@ O que fica:
 ## Licença
 
 [MIT](LICENSE). As fontes mantêm a licença OFL delas.
+
+Os emuladores recompilados não são código do Meibox e mantêm as licenças deles:
+- Snes9x: licença própria, uso e distribuição gratuitos sem fins comerciais;
+- mGBA: MPL 2.0;
+- gpSP: GPL 2.
+
+Os textos das licenças vão no ZIP, em `totobox/instalador/desempenho/licencas/`. O código-fonte exato de cada um, com os scripts de compilação, está na página de cada release, no arquivo `Meibox-<versão>-fontes-dos-emuladores.zip`.

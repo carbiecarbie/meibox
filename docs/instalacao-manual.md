@@ -23,6 +23,7 @@ Opções:
 | `--lingua en` | Põe as mensagens e o Meibox em inglês. |
 | `--sem-boot` | Não abre o Meibox quando o aparelho liga. |
 | `--sem-copiloto` | Não instala o copiloto, mesmo havendo uma chave. |
+| `--sem-desempenho` | Não troca os emuladores nem cria os ajustes de jogo (os "jogos mais rápidos"). |
 | `--remover` | Remove os dois programas. |
 | `--apagar-chave` | Junto com `--remover`, apaga também a chave guardada. |
 

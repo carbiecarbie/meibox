@@ -9,15 +9,17 @@
 #     --apagar-chave   com --remover: apaga também a chave da IA guardada no aparelho
 #     --sem-boot       não abre o Meibox quando o aparelho liga
 #     --sem-copiloto   não instala o copiloto, mesmo com chave
+#     --sem-desempenho não aplica as otimizações de desempenho dos jogos
 #     --lingua pt|en   idioma das mensagens e do Meibox (padrão: pt)
 #     --tela           telas no aparelho (dialog no tty1); sem isso, só texto
 #
 # O que faz, em ordem: confere se o sistema é da família ArkOS (dArkOS/ArkOS); instala o Meibox
-# (meibox/device/install.sh); se houver chave, instala o copiloto (copiloto/device/install.sh),
+# (meibox/device/install.sh); aplica as otimizações medidas dos jogos (desempenho/desempenho.py);
+# se houver chave, instala o copiloto (copiloto/device/install.sh),
 # guarda a chave fora do cartão e escolhe o modelo. O registro fica em ultimo-log.txt, ao lado,
 # e nunca contém a chave.
 set -u
-VERSAO=0.1.0
+VERSAO=0.2.0
 DIR="$(cd "$(dirname "$(readlink -f "$0")")" && pwd)"
 CARTAO="$(dirname "$DIR")"
 ARQ_CHAVE="$CARTAO/chave-da-ia.txt"
@@ -26,9 +28,11 @@ LOG="$DIR/ultimo-log.txt"
 MEI_APP="$HOME/.local/share/totobox"
 COP_APP="$HOME/.local/share/mei-copiloto"
 COP_CONF="$HOME/.config/mei-copiloto"
+PACOTE="$DIR/desempenho"
+desemp() { python3 -I "$PACOTE/desempenho.py" "$@"; }
 DROPIN=/etc/systemd/system/emulationstation.service.d/10-totobox.conf
 
-TELA=0; CONFERIR=0; REMOVER=0; APAGAR_CHAVE=0; BOOT=1; COPILOTO=1; LINGUA=pt
+TELA=0; CONFERIR=0; REMOVER=0; APAGAR_CHAVE=0; BOOT=1; COPILOTO=1; DESEMPENHO=1; LINGUA=pt
 while [ $# -gt 0 ]; do
   case "$1" in
     --tela) TELA=1 ;;
@@ -37,6 +41,7 @@ while [ $# -gt 0 ]; do
     --apagar-chave) APAGAR_CHAVE=1 ;;
     --sem-boot) BOOT=0 ;;
     --sem-copiloto) COPILOTO=0 ;;
+    --sem-desempenho) DESEMPENHO=0 ;;
     --lingua) shift; LINGUA="${1:-pt}" ;;
     *) echo "opção desconhecida: $1"; exit 2 ;;
   esac
@@ -100,6 +105,7 @@ for l in ("libSDL2-2.0.so.0", "libSDL2_image-2.0.so.0", "libSDL2_ttf-2.0.so.0",
     || PROBLEMAS+="- $(t 'arquivos do instalador incompletos na pasta' 'installer files missing in') $DIR"$'\n'
   [ -z "$PROBLEMAS" ]
 }
+jogo_aberto() { pgrep -f '/usr/local/bin/retroarch|/opt/retroarch/bin/' >/dev/null; }
 tem_internet() { python3 -c 'import socket; socket.create_connection(("pypi.org", 443), 6)' 2>/dev/null; }
 boot_possivel() { systemctl cat emulationstation.service >/dev/null 2>&1; }
 chave_guardada() {  # imprime o fornecedor da chave já guardada no aparelho, se houver
@@ -120,6 +126,7 @@ Your Ficha pictures, lines, hints and guides stay in the totobox folder on the c
   fi
   espera "$(t 'Removendo...' 'Removing...')"
   local ok=1
+  if [ -f "$PACOTE/desempenho.py" ] && desemp instalado; then rodar desemp remover || ok=0; fi
   if [ -f "$COP_APP/device/uninstall.sh" ]; then rodar bash "$COP_APP/device/uninstall.sh" || ok=0; fi
   if [ -f "$MEI_APP/device/uninstall.sh" ]; then rodar bash "$MEI_APP/device/uninstall.sh" || ok=0; fi
   if [ -n "$(chave_guardada)" ]; then
@@ -130,8 +137,8 @@ Your Ficha pictures, lines, hints and guides stay in the totobox folder on the c
     [ "$APAGAR_CHAVE" = 1 ] && rodar python3 -I "$DIR/chave.py" apagar "$COP_CONF"
   fi
   if [ "$ok" = 1 ]; then
-    aviso "$(t 'Pronto' 'Done')" "$(t 'O Meibox foi removido. O EmulationStation volta a abrir direto ao ligar.' \
-                                     'Meibox was removed. EmulationStation opens directly again at boot.')"
+    aviso "$(t 'Pronto' 'Done')" "$(t 'O Meibox foi removido. O EmulationStation volta a abrir direto ao ligar. Emuladores e ajustes de jogo voltaram ao original; a escolha de emulador por jogo volta no próximo início.' \
+                                     'Meibox was removed. EmulationStation opens directly again at boot. Emulators and game settings are back to the originals; per-game emulator choices revert at the next start.')"
   else
     aviso "$(t 'Algo deu errado' 'Something went wrong')" "$(fim_do_log)"
     return 1
@@ -160,7 +167,28 @@ instalar() {
     resumo+="$(t '- Abra pelo menu Options > Meibox.' '- Open it from Options > Meibox.')"$'\n'
   fi
 
-  # 2. Copiloto: só com chave (no cartão ou já guardada) ou se já estava instalado
+  # 2. Desempenho dos jogos (o que foi medido em desempenho/)
+  if [ "$DESEMPENHO" = 1 ] && [ -f "$PACOTE/desempenho.py" ]; then
+    if jogo_aberto; then
+      resumo+="$(t '- Desempenho NÃO aplicado: feche o jogo aberto e rode de novo.' \
+                   '- Performance NOT applied: close the open game and run again.')"$'\n'
+    else
+      espera "$(t 'Ajustando os jogos... Lendo a sua biblioteca, pode levar 1 minuto.' \
+                  'Tuning the games... Reading your library, may take a minute.')"
+      local saida_desemp
+      echo "\$ desempenho.py aplicar $PACOTE $LINGUA" >>"$LOG"
+      if saida_desemp="$(desemp aplicar "$PACOTE" "$LINGUA" 2>>"$LOG")"; then
+        printf '%s\n' "$saida_desemp" >>"$LOG"
+        [ "$TELA" = 1 ] || printf '%s\n' "$saida_desemp"
+        resumo+="$saida_desemp"$'\n'
+      else
+        resumo+="$(t '- Desempenho NÃO aplicado. Últimas linhas do registro:' \
+                     '- Performance NOT applied. Last log lines:')"$'\n'"$(fim_do_log)"$'\n'
+      fi
+    fi
+  fi
+
+  # 3. Copiloto: só com chave (no cartão ou já guardada) ou se já estava instalado
   local prov_cartao="" rc=1 prov
   prov_cartao="$(python3 -I "$DIR/chave.py" ler "$ARQ_CHAVE")"; rc=$?
   if [ "$rc" = 2 ]; then
@@ -252,6 +280,10 @@ Meibox: $([ -d "$MEI_APP" ] && t 'já instalado (seria atualizado)' 'installed (
 Boot: $([ "$BOOT" = 1 ] && t 'abriria ao ligar' 'would open at boot' || t 'não abriria ao ligar' 'would not open at boot')
 $(t 'Chave no cartão' 'Key on card'): $(case $rc in 0) nome_fornecedor "$prov" ;; 2) t 'inválida' 'invalid' ;; *) t 'nenhuma' 'none' ;; esac)
 $(t 'Chave guardada' 'Stored key'): $(p=$(chave_guardada); [ -n "$p" ] && nome_fornecedor "$p" || t 'nenhuma' 'none')"
+  if [ -f "$PACOTE/desempenho.py" ]; then
+    echo; echo "--- $(t 'desempenho dos jogos' 'game performance')"
+    desemp conferir "$PACOTE" "$LINGUA"
+  fi
   if [ -f "$DIR/copiloto/device/install.sh" ]; then
     echo; echo "--- copiloto/device/install.sh --conferir"
     bash "$DIR/copiloto/device/install.sh" --conferir
@@ -283,6 +315,14 @@ It becomes the device home screen, with Mei the cat, your games and your Ficha. 
 'Open Meibox every time the device starts?
 
 (If not, it stays in Options > Meibox.)')" 0 || BOOT=0
+  fi
+  if [ "$DESEMPENHO" = 1 ] && [ -f "$PACOTE/desempenho.py" ]; then
+    pergunta "$(t 'Deixar os jogos mais rápidos? (recomendado)
+
+Troca emuladores por versões recompiladas e ajusta o vídeo, como medido no R36S: SNES em média 24% mais rápido, GBA de 11% a 280%, botão um quadro mais rápido. O que não servir no seu sistema fica como está. Remover desfaz tudo.' \
+'Make games run faster? (recommended)
+
+Swaps emulators for rebuilt versions and tunes video, as measured on the R36S: SNES 24% faster on average, GBA 11% to 280%, button one frame quicker. Anything that does not fit your system is left alone. Remove undoes it all.')" 0 || DESEMPENHO=0
   fi
 fi
 

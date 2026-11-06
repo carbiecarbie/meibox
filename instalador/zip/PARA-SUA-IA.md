@@ -10,7 +10,7 @@ Ele vai explicar cada passo e pedir a sua confirmação antes de mudar alguma co
 
 ## Instruções para o assistente
 
-Você vai instalar o **Meibox** (tela de início) e, se a pessoa quiser, o **Copiloto da Mei** (dicas de IA durante o jogo) num R36S, pela rede local, via SSH. Os arquivos estão nesta pasta: `tools/` e `totobox/`. O instalador é `totobox/instalador/instalar.sh`. Leia esse arquivo antes de começar: ele diz exatamente o que muda no aparelho.
+Você vai instalar o **Meibox** (tela de início) e, se a pessoa quiser, os **jogos mais rápidos** (emuladores recompilados e ajustes de vídeo por jogo) e o **Copiloto da Mei** (dicas de IA durante o jogo) num R36S, pela rede local, via SSH. Os arquivos estão nesta pasta: `tools/` e `totobox/`. O instalador é `totobox/instalador/instalar.sh`. Leia esse arquivo antes de começar: ele diz exatamente o que muda no aparelho.
 
 Fale com a pessoa na língua dela (as instruções aqui estão em português; os comandos valem para qualquer língua). Use palavras simples. Muita gente nunca usou um terminal. Antes de cada passo, diga o que vai fazer e por quê.
 
@@ -69,16 +69,22 @@ Explique o resultado. Se aparecer "não é compatível", pare e conte o que falt
 
 ### 6. Instalar
 
-Confirme que nenhum jogo está aberto. Depois pergunte a língua da pessoa e se o Meibox deve abrir quando o aparelho liga. Rode:
+Confirme que nenhum jogo está aberto. Depois pergunte à pessoa:
+- a língua dela;
+- se o Meibox deve abrir quando o aparelho liga;
+- se quer os jogos mais rápidos (recomendado). Explique em uma frase: troca snes9x, mGBA e gpSP por versões recompiladas para o R36S e ajusta o vídeo por jogo; SNES fica em média 24% mais rápido e GBA de 11% a 280%; Remover desfaz.
+
+Rode:
 
 ```
 ssh ark@IP "bash /roms/totobox/instalador/instalar.sh"
 ```
 
-Opções: `--lingua en`, `--sem-boot`, `--sem-copiloto`.
+Opções: `--lingua en`, `--sem-boot`, `--sem-copiloto`, `--sem-desempenho` (se a pessoa não quiser os jogos mais rápidos).
 
 O que o instalador faz:
 - instala o Meibox;
+- se a pessoa não disse `--sem-desempenho`, troca os emuladores (guardando os originais) e cria os ajustes de jogo. Os emuladores que não abrem no sistema dela ficam como estão;
 - se encontrar a chave no cartão, instala o copiloto;
 - guarda a chave fora do cartão, com permissão 600, e apaga a chave do arquivo no cartão;
 - escolhe o modelo.
@@ -89,6 +95,7 @@ Mostre o resumo para a pessoa.
 
 - Pergunte antes de reiniciar: `ssh ark@IP "sudo -n systemctl reboot"`.
 - Depois peça para a pessoa confirmar que o Meibox apareceu na tela.
+- Com os jogos mais rápidos, confira: `ssh ark@IP "python3 -I ~/.local/share/meibox-desempenho/desempenho.py instalado && echo ok"`. A escolha de emulador por jogo é aplicada nesse reinício.
 - Com o copiloto, confira que o serviço está ativo: `ssh ark@IP "systemctl is-active mei-copiloto"`.
 - Depois peça para ela abrir um jogo e apertar **SELECT + R1**. Na primeira vez em cada jogo, a Mei "estuda" por cerca de 1 minuto.
 

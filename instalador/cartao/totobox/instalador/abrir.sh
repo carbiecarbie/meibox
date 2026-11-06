@@ -39,6 +39,8 @@ trap 'exit 130' INT TERM HUP
 export TERM=linux LANG=C.UTF-8 LC_ALL=C.UTF-8
 [[ -f /opt/inttools/noshadows.dialogrc ]] && export DIALOGRC=/opt/inttools/noshadows.dialogrc
 if ! pgrep -x gptokeyb >/dev/null && ! pgrep -x oga_controls >/dev/null; then
+  # O /dev/uinput começa só para o root; as ferramentas do sistema liberam assim ao abrir.
+  [[ -w /dev/uinput ]] || sudo -n chmod 666 /dev/uinput 2>/dev/null
   if [[ -x /opt/inttools/gptokeyb && -w /dev/uinput ]]; then
     export SDL_GAMECONTROLLERCONFIG_FILE=/opt/inttools/gamecontrollerdb.txt
     /opt/inttools/gptokeyb -c "$DIR/teclas.gptk" >/dev/null 2>&1 &

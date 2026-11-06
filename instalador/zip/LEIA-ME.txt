@@ -18,6 +18,14 @@ INSTALAR
 Para pular o Meibox numa vez: segure B enquanto o aparelho liga.
 Para ir ao EmulationStation: aperte B na tela de início do Meibox.
 
+JOGOS MAIS RÁPIDOS (recomendado)
+O instalador pergunta se pode deixar os jogos mais rápidos. Ele troca três
+emuladores (snes9x, mGBA e gpSP) por versões recompiladas para o R36S e ajusta
+o vídeo jogo por jogo. Medido num R36S: SNES em média 24% mais rápido, GBA de
+11% a 280%, e o botão responde um quadro antes. Os jogos são reconhecidos pelo
+conteúdo, não pelo nome do arquivo. Remover volta tudo ao original.
+Licenças e código-fonte desses emuladores: totobox/instalador/desempenho/licencas.
+
 COPILOTO DA MEI (opcional)
 Dicas de uma IA durante o jogo: aperte SELECT + R1 e a Mei diz o que fazer.
 Precisa de um adaptador Wi-Fi USB (o R36S não tem Wi-Fi) e de uma chave de API
@@ -29,8 +37,8 @@ Já instalou sem a chave? Ponha a chave no arquivo e rode Instalar Meibox de nov
 
 ATUALIZAR OU REMOVER
 Copie as pastas de uma versão nova por cima e rode Options > Tools > Instalar Meibox.
-O mesmo item tem a opção Remover. As suas fotos, frases, dicas e guias ficam na
-pasta totobox do cartão.
+O mesmo item tem a opção Remover, que também devolve os emuladores originais.
+As suas fotos, frases, dicas e guias ficam na pasta totobox do cartão.
 
 QUER QUE UMA IA FAÇA TUDO?
 Se você usa um assistente de IA que mexe no computador (Claude Code, Codex e

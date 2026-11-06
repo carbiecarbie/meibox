@@ -1,0 +1,40 @@
+EMULADORES RECOMPILADOS - licencas e codigo-fonte
+=================================================
+
+A opcao "Deixar os jogos mais rapidos" do instalador troca tres emuladores
+(cores do RetroArch) por versoes recompiladas no proprio R36S. Eles NAO sao
+codigo do Meibox: cada um tem a sua licenca, que vem nesta pasta.
+
+snes9x_libretro.so
+  Projeto: https://github.com/libretro/snes9x
+  Commit:  fae2fea08f74180759ef540ee94259213f503480
+  Licenca: a do Snes9x (snes9x-LICENSE.txt). Uso e distribuicao gratuitos,
+           sem fins comerciais. Nao pode ser vendido nem vir em produto pago.
+  Como foi compilado: GCC 12, -O3 -mcpu=cortex-a35, com PGO (perfil gerado
+           jogando no R36S), make -C libretro platform=unix.
+
+mgba_libretro.so (tambem instalado como mgba_rumble_libretro.so)
+  Projeto: https://github.com/libretro/mgba
+  Commit:  7a12d6d4b9acb14c0ae62c9166b6a2f3d08007f6
+  Licenca: Mozilla Public License 2.0 (mgba-LICENSE-MPL-2.0.txt).
+  Como foi compilado: GCC 12, -O3 -mcpu=cortex-a35, com PGO; cmake Release,
+           alvo mgba_libretro.
+
+gpsp_libretro.so
+  Projeto: https://github.com/libretro/gpsp
+  Commit:  5819380c2ffb0900219d700a382ee68c464ebb99
+  Licenca: GNU GPL versao 2 (gpsp-COPYING-GPL-2.0.txt).
+  Como foi compilado: GCC 12, -O3 -mcpu=cortex-a35, make platform=arm64
+           (com o recompilador dinamico).
+
+CODIGO-FONTE
+Nenhum codigo desses projetos foi modificado: so as opcoes de compilacao.
+O codigo-fonte exato de cada commit, junto com os scripts de compilacao
+(build-core.sh e build-all.sh), esta na pagina da release, no mesmo lugar
+de onde se baixa o ZIP:
+  https://github.com/carbiecarbie/meibox/releases
+  arquivo "Meibox-<versao>-fontes-dos-emuladores.zip"
+Os scripts tambem estao no repositorio, em desempenho/device/build/.
+
+Os emuladores supafaust e chimerasnes, usados em alguns jogos de SNES,
+ja vem no sistema. O instalador so escolhe qual jogo usa qual.

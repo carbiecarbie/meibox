@@ -23,6 +23,7 @@ Options:
 | `--lingua en` | Shows the messages and Meibox in English. |
 | `--sem-boot` | Does not open Meibox at boot. |
 | `--sem-copiloto` | Skips the copilot, even when there is a key. |
+| `--sem-desempenho` | Skips the emulator swap and per-game overrides (the "faster games" part). |
 | `--remover` | Removes both programs. |
 | `--apagar-chave` | With `--remover`, also erases the stored key. |
 
